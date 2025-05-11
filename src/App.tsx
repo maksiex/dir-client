@@ -3,12 +3,13 @@ import {useEffect, useState} from "react";
 export const App = () => {
     const [value, setValue] = useState<any>(null);
     useEffect(() => {
-        fetch('http://localhost:8080/airports')
+        fetch('http://localhost:8080/news')
             .then(res => res.json())
             .then(data => setValue(data));
     }, [])
+    console.log(value);
 
     return (<>
-        { value ? Object.values(value.ART[0]).map(el => <li>{el}</li>) : "loading..." }
+        <div>data</div>
     </>)
 }
